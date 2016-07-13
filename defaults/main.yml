@@ -1,0 +1,3 @@
+---
+hermes_pkg: Hermes
+hermes_domain: "com.alexcrichton.{{ hermes_pkg }}"
