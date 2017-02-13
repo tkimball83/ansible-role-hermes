@@ -63,7 +63,7 @@ You can modify the Hermes plist by setting the following:
 
 ## Dependencies
 
-None
+  * https://galaxy.ansible.com/geerlingguy/homebrew
 
 ## Example Playbook
 
