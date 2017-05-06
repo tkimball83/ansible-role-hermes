@@ -14,52 +14,7 @@ Available variables are listed below, along with default values:
 
     hermes_pkg: Hermes
     hermes_domain: "com.alexcrichton.{{ hermes_pkg }}"
-
-You can modify the Hermes plist by setting the following:
-
-    hermes_plist:
-      SUAutomaticallyUpdate:
-        type: bool
-        value: false
-      SUHasLaunchedBefore:
-        type: bool
-        value: true
-      audioQuality:
-        type: int
-        value: 1
-      alwaysOnTop:
-        type: bool
-        value: false
-      drawerWidth:
-        type: int
-        value: 130
-      openDrawer:
-        type: int
-        value: 0
-      pauseOnScreenLock:
-        type: bool
-        value: false
-      pauseOnScreensaverStart:
-        type: bool
-        value: false
-      playOnScreenUnlock:
-        type: bool
-        value: false
-      playOnScreensaverStop:
-        type: bool
-        value: false
-      pleaseGrowlPlay:
-        type: bool
-        value: false
-      sortStations:
-        type: int
-        value: 2
-      statusBarIcon:
-        type: bool
-        value: false
-      statusBarIconBlackWhite:
-        type: bool
-        value: false
+    hermes_plist: {}
 
 ## Dependencies
 
@@ -74,31 +29,46 @@ You can modify the Hermes plist by setting the following:
           hermes_plist:
             SUAutomaticallyUpdate:
               type: bool
+              value: false
+            SUHasLaunchedBefore:
+              type: bool
               value: true
             audioQuality:
+              type: int
+              value: 1
+            alwaysOnTop:
+              type: bool
+              value: false
+            drawerWidth:
+              type: int
+              value: 130
+            openDrawer:
               type: int
               value: 0
             pauseOnScreenLock:
               type: bool
-              value: true
+              value: false
             pauseOnScreensaverStart:
               type: bool
-              value: true
+              value: false
             playOnScreenUnlock:
               type: bool
-              value: true
+              value: false
             playOnScreensaverStop:
               type: bool
-              value: true
+              value: false
             pleaseGrowlPlay:
               type: bool
-              value: true
+              value: false
+            sortStations:
+              type: int
+              value: 2
             statusBarIcon:
               type: bool
-              value: true
+              value: false
             statusBarIconBlackWhite:
               type: bool
-              value: true
+              value: false
 
 ## License
 
@@ -107,4 +77,3 @@ BSD
 ## Author Information
 
 This role was created by [Taylor Kimball](http://www.linuxhq.org).
-
