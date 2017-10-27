@@ -1,6 +1,7 @@
 ---
 - name: Ensure that the hermes package is installed
   tags: hermes
+  become: true
   homebrew_cask:
     name: "{{ hermes_pkg|lower }}"
     state: present
@@ -16,5 +17,10 @@
     type: "{{ item.value.type }}"
     value: "{{ item.value.value }}"
   with_dict: "{{ hermes_plist }}"
-  when: hermes_homebrew_cask|success
+  when:
+    - hermes_domain is defined
+    - item.key is defined
+    - item.value.type is defined
+    - item.value.value is defined
+    - hermes_homebrew_cask|success
 ...
