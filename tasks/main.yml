@@ -1,7 +1,6 @@
 ---
 - name: Ensure that the hermes package is installed
   tags: hermes
-  become: true
   homebrew_cask:
     name: "{{ hermes_pkg|lower }}"
     state: present
