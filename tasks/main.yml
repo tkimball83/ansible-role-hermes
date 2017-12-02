@@ -15,7 +15,7 @@
     state: "{{ item.value.state|default('present') }}"
     type: "{{ item.value.type }}"
     value: "{{ item.value.value }}"
-  with_dict: "{{ hermes_plist }}"
+  with_dict: "{{ hermes_defaults }}"
   when:
     - hermes_domain is defined
     - item.key is defined

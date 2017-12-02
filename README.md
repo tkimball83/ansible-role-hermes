@@ -14,7 +14,7 @@ Available variables are listed below, along with default values:
 
     hermes_pkg: Hermes
     hermes_domain: "com.alexcrichton.{{ hermes_pkg }}"
-    hermes_plist: {}
+    hermes_defaults: {}
 
 ## Dependencies
 
@@ -26,7 +26,7 @@ Available variables are listed below, along with default values:
       connection: local
       roles:
         - role: tkimball83.hermes
-          hermes_plist:
+          hermes_defaults:
             SUAutomaticallyUpdate:
               type: bool
               value: false
@@ -72,7 +72,7 @@ Available variables are listed below, along with default values:
 
 ## License
 
-BSD
+GPLv3
 
 ## Author Information
 
