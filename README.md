@@ -6,7 +6,7 @@ macOS - Pandora Client
 
 ## Requirements
 
-This role requires Homebrew and Homebrew Cask to be installed
+This role requires homebrew and homebrew cask to be installed
 
 ## Role Variables
 
@@ -18,7 +18,7 @@ Available variables are listed below, along with default values:
 
 ## Dependencies
 
-  * https://galaxy.ansible.com/geerlingguy/homebrew
+None
 
 ## Example Playbook
 
