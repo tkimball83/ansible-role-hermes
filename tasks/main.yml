@@ -1,13 +1,12 @@
 ---
-- name: Ensure that the hermes package is installed
+- name: Ensure that the {{ hermes_package }} package is installed
   tags: hermes
   homebrew_cask:
-    name: "{{ hermes_pkg|lower }}"
+    name: "{{ hermes_package|lower }}"
     state: present
   register: hermes_homebrew_cask
-  when: hermes_pkg is defined
 
-- name: Applying hermes configurations
+- name: Attempting to apply {{ hermes_package }} configurations
   tags: hermes
   osx_defaults:
     domain: "{{ hermes_domain }}"
@@ -17,9 +16,9 @@
     value: "{{ item.value.value }}"
   with_dict: "{{ hermes_defaults }}"
   when:
-    - hermes_domain is defined
     - item.key is defined
     - item.value.type is defined
     - item.value.value is defined
-    - hermes_homebrew_cask|success
+    - hermes_defaults|length > 0
+    - hermes_homebrew_cask is success
 ...
