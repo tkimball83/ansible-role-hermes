@@ -14,7 +14,7 @@ This role requires homebrew and homebrew cask to be installed
 
 Available variables are listed below, along with default values:
 
-    hermes_defaults: {}
+    hermes_defaults: []
     hermes_domain: "com.alexcrichton.{{ hermes_package }}"
     hermes_package: Hermes
 
@@ -29,46 +29,46 @@ None
       roles:
         - role: tkimball83.hermes
           hermes_defaults:
-            SUAutomaticallyUpdate:
+            - name: SUAutomaticallyUpdate
               type: bool
               value: false
-            SUHasLaunchedBefore:
+            - name: SUHasLaunchedBefore
               type: bool
               value: true
-            audioQuality:
+            - name: audioQuality
               type: int
               value: 1
-            alwaysOnTop:
+            - name: alwaysOnTop
               type: bool
               value: false
-            drawerWidth:
+            - name: drawerWidth
               type: int
               value: 130
-            openDrawer:
+            - name: openDrawer
               type: int
               value: 0
-            pauseOnScreenLock:
+            - name: pauseOnScreenLock
               type: bool
               value: false
-            pauseOnScreensaverStart:
+            - name: pauseOnScreensaverStart
               type: bool
               value: false
-            playOnScreenUnlock:
+            - name: playOnScreenUnlock
               type: bool
               value: false
-            playOnScreensaverStop:
+            - name: playOnScreensaverStop
               type: bool
               value: false
-            pleaseGrowlPlay:
+            - name: pleaseGrowlPlay
               type: bool
               value: false
-            sortStations:
+            - name: sortStations
               type: int
               value: 2
-            statusBarIcon:
+            - name: statusBarIcon
               type: bool
               value: false
-            statusBarIconBlackWhite:
+            - name: statusBarIconBlackWhite
               type: bool
               value: false
 

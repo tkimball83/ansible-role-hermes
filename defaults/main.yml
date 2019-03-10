@@ -1,5 +1,5 @@
 ---
-hermes_defaults: {}
+hermes_defaults: []
 hermes_domain: "com.alexcrichton.{{ hermes_package }}"
 hermes_package: Hermes
 ...

@@ -4,21 +4,23 @@
   homebrew_cask:
     name: "{{ hermes_package|lower }}"
     state: present
-  register: hermes_homebrew_cask
+  when: hermes_package|length > 0
 
 - name: Attempting to apply {{ hermes_package }} configurations
   tags: hermes
   osx_defaults:
     domain: "{{ hermes_domain }}"
-    key: "{{ item.key|regex_replace('_', ' ') }}"
-    state: "{{ item.value.state|default('present') }}"
-    type: "{{ item.value.type }}"
-    value: "{{ item.value.value }}"
-  with_dict: "{{ hermes_defaults }}"
+    key: "{{ item.name }}"
+    state: "{{ item.state|default('present') }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop: "{{ hermes_defaults }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
-    - item.key is defined
-    - item.value.type is defined
-    - item.value.value is defined
+    - item.name is defined
+    - item.type is defined
+    - item.value is defined
     - hermes_defaults|length > 0
-    - hermes_homebrew_cask is success
+    - hermes_domain is defined
 ...
